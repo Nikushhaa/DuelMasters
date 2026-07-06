@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Showdown // 1v1 Weapon Duel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-title">
+    <span class="topbar-mark">◆</span> SHOWDOWN
+  </div>
+  <div class="topbar-status">
+    <span id="round-label">Round 1 — Best of 5</span>
+    <span class="dot">·</span>
+    <span id="phase-label">Shopping phase</span>
+  </div>
+  <button id="reset-btn" class="btn btn-ghost">Reset Match</button>
+</header>
+
+<main class="arena-wrap">
+  <section id="p1-panel" class="player-panel player-panel-left">
+    <div class="player-head">
+      <span class="player-tag p1-tag">PLAYER 1</span>
+      <span class="wins-badge">Wins <span id="p1-wins">0</span></span>
+    </div>
+    <div class="hp-row">
+      <div class="hp-bar"><div id="p1-hp-fill" class="hp-fill p1-fill"></div></div>
+      <span id="p1-hp-text" class="hp-text">100 HP</span>
+    </div>
+    <div class="stat-row">
+      <span id="p1-money" class="money">$800</span>
+      <span id="p1-weapon" class="weapon-tag">Glock-18</span>
+    </div>
+    <span id="p1-streak" class="streak-badge"></span>
+    <button id="p1-fire-btn" class="btn btn-fire btn-fire-left" disabled>FIRE (F)</button>
+  </section>
+
+  <section id="arena" class="arena">
+    <div class="arena-sun"></div>
+    <div id="p1-character" class="character character-p1">
+      <div class="char-arm"></div>
+      <div class="char-gun"></div>
+      <div class="char-head"></div>
+      <div class="char-body"></div>
+      <div class="char-legs"></div>
+    </div>
+    <div id="p2-character" class="character character-p2">
+      <div class="char-arm"></div>
+      <div class="char-gun"></div>
+      <div class="char-head"></div>
+      <div class="char-body"></div>
+      <div class="char-legs"></div>
+    </div>
+    <div class="arena-ground"></div>
+  </section>
+
+  <section id="p2-panel" class="player-panel player-panel-right">
+    <div class="player-head">
+      <span class="wins-badge">Wins <span id="p2-wins">0</span></span>
+      <span class="player-tag p2-tag">PLAYER 2</span>
+    </div>
+    <div class="hp-row">
+      <span id="p2-hp-text" class="hp-text">100 HP</span>
+      <div class="hp-bar"><div id="p2-hp-fill" class="hp-fill p2-fill"></div></div>
+    </div>
+    <div class="stat-row">
+      <span id="p2-weapon" class="weapon-tag">USP-S</span>
+      <span id="p2-money" class="money">$800</span>
+    </div>
+    <span id="p2-streak" class="streak-badge"></span>
+    <button id="p2-fire-btn" class="btn btn-fire btn-fire-right" disabled>FIRE (J)</button>
+  </section>
+</main>
+
+<section class="log-wrap">
+  <h3 class="log-title">Fight Log</h3>
+  <div id="fight-log" class="fight-log"></div>
+</section>
+
+<section id="shop-panel" class="shop-panel">
+  <div class="shop-header">
+    <div class="shop-tabs">
+      <button id="shop-tab-p1" class="shop-tab active">Player 1 Shop</button>
+      <button id="shop-tab-p2" class="shop-tab">Player 2 Shop</button>
+    </div>
+    <div class="shop-controls">
+      <label class="knife-toggle-label">
+        <input type="checkbox" id="knife-toggle"> Knife Round
+      </label>
+      <button id="start-round-btn" class="btn btn-primary">Start Round</button>
+      <button id="next-round-btn" class="btn btn-primary" style="display:none;">Continue to Shop</button>
+    </div>
+  </div>
+  <div id="shop-grid" class="shop-grid"></div>
+</section>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
